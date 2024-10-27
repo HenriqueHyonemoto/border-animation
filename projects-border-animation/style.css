@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;  
+}
+html{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #f0f0f0;
+}
+body{
+  min-height: 100vh;
+  background: black;
+  color: #a2a5b3;
+  align-content: center;
+}
+h1{
+  color: white;
+  font-size:20px;
+}
+.card{
+  margin: 0 auto;
+  padding: 2em;
+  width: 350px;
+  background: #0D1117;
+  
+  border-radius: 10px;
+  position: relative;
+}
+
+.center{
+  text-align: center;
+}
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+button{
+  margin: 0 auto;
+  padding: 1em;
+  width: 200px;
+  background: #0D1117;
+  color:white;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  border:none;
+  font-size: 20px;
+}
+
+.card2{
+  background: #0D1117;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card2::after, .card2::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 58%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.card2::before{
+  filter: blur(0.5rem);
+  opacity: 0.5;
+}
+
+.project_image{
+  border-radius: 100%;
+  box-shadow: 20px black;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+.container{
+  display:flex;
+  margin:10px;
+}
